@@ -1,7 +1,7 @@
 import pickle 
 import pandas as pd
 
-with open('/home/manav-bassi/Desktop/insurance premium project/model/model.pkl','rb') as f:
+with open('model/model.pkl','rb') as f:
     model = pickle.load(f)
 
 #this can be done using mlflow ,i am taking this as example 
@@ -23,7 +23,7 @@ def predict_output(user_input : dict):
 
     return {
         'predicted_category' : predicted_class,
-        'confidence': confidence,
+        'confidence': round(confidence,4),
         'class_probabilites': class_probs
     }
 

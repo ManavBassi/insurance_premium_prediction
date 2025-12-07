@@ -22,12 +22,14 @@ def health_check():
 def predict_premium(data: UserInput):
 
     user_input = {
+        'income_lpa': data.income_lpa,
         'bmi': data.bmi,
         'age_group': data.age_group,
-        'lifestyle_risk': data.lifestyle_risk,
+        'occupation': data.occupation,
         'city_tier': data.city_tier,
-        'income_lpa': data.income_lpa,
-        'occupation': data.occupation
+        'lifestyle_risk': data.lifestyle_risk
+    
+        
     }
     try:
         prediction = predict_output(user_input)
